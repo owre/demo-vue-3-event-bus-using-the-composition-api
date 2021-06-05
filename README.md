@@ -6,7 +6,7 @@ The purpose of this demo is to demonstrate how to leverage the Composition API t
 
 ### src/components/MessagesList.vue
 
-Component that lists messages that it receives from the event bus. It will clear messages when it receives the 'clear-messages' event.
+Component that lists messages that it receives from the event bus. It will clear messages from the list when it receives the 'clear-messages' event.
 
 ### src/components/SendMessageForm.vue
 
