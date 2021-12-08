@@ -26,14 +26,11 @@ export default {
     const message = ref('')
 
     return {
-      emitEvent,
-      message
-    }
-  },
-  methods: {
-    onSubmit() {
-      this.emitEvent('message', this.message || 'Empty message..')
-      this.message = ''
+      message,
+      onSubmit() {
+        emitEvent('message', message.value || 'Empty message..')
+        message.value = ''
+      }
     }
   }
 }

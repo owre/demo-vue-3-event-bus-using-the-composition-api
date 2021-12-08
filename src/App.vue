@@ -7,16 +7,23 @@
     <div class="p-5 bg-light mb-4">
       <div class="container-fluid py-3">
         <p class="fs-4">
-          The purpose of this demo is to demonstrate how to leverage the Composition API to add and use an event bus in your vue project
+          The purpose of this demo is to demonstrate how to leverage the
+          Composition API to add and use an event bus in your vue project
         </p>
         <div class="row gx-3">
           <div class="col-auto">
-            <a href="https://owre.se/vue-3-event-bus-using-the-composition-api/" class="btn btn-primary col-auto">
+            <a
+              href="https://owre.se/vue-3-event-bus-using-the-composition-api/"
+              class="btn btn-primary col-auto"
+            >
               Read the article
             </a>
           </div>
           <div class="col-auto">
-            <a href="https://github.com/owre/demo-vue-3-event-bus-using-the-composition-api" class="btn btn-outline-primary col">
+            <a
+              href="https://github.com/owre/demo-vue-3-event-bus-using-the-composition-api"
+              class="btn btn-outline-primary col"
+            >
               Browse the source
             </a>
           </div>
@@ -44,7 +51,8 @@
       <messages-list />
     </div>
     <p v-else class="text-center">
-      Check the console to see that the MessageList component is not logging any more messages. Event handlers have been successfully removed.
+      Check the console to see that the MessageList component is not logging any
+      more messages. Event handlers have been successfully removed.
     </p>
   </div>
 </template>
@@ -61,20 +69,16 @@ export default {
     SendMessageForm,
     MessagesList
   },
-  
+
   setup() {
-    const { emitEvent, onEvent } = useEventBus()
+    const { emitEvent } = useEventBus()
     const shouldShowMessages = ref(true)
 
     return {
-      emitEvent,
-      onEvent,
-      shouldShowMessages
-    }
-  },
-  methods: {
-    clearMessages() {
-      this.emitEvent('clear-messages')
+      shouldShowMessages,
+      clearMessages() {
+        emitEvent('clear-messages')
+      }
     }
   }
 }
